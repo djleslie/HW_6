@@ -39,9 +39,8 @@
         </asp:SqlDataSource>
     
     </div>
-        <asp:GridView ID="GridView1" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="RecipeName" DataSourceID="sql_djleslieRecipes">
-            <Columns>
-                <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
+        <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" DataKeyNames="RecipeName" DataSourceID="sql_djleslieRecipes" Height="50px" Width="125px">
+            <Fields>
                 <asp:BoundField DataField="RecipeName" HeaderText="RecipeName" ReadOnly="True" SortExpression="RecipeName" />
                 <asp:BoundField DataField="SubmittedBy" HeaderText="SubmittedBy" SortExpression="SubmittedBy" />
                 <asp:BoundField DataField="Ingredient1" HeaderText="Ingredient1" SortExpression="Ingredient1" />
@@ -51,8 +50,8 @@
                 <asp:BoundField DataField="Ingredient5" HeaderText="Ingredient5" SortExpression="Ingredient5" />
                 <asp:BoundField DataField="Preperations" HeaderText="Preperations" SortExpression="Preperations" />
                 <asp:BoundField DataField="Notes" HeaderText="Notes" SortExpression="Notes" />
-            </Columns>
-        </asp:GridView>
+            </Fields>
+        </asp:DetailsView>
     </form>
 </body>
 </html>
