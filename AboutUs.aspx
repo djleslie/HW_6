@@ -12,6 +12,16 @@
     Using 5 Ingredients or Less!</h2>
     <form id="form1" runat="server">
     <div>
+            <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Home.aspx">Home</asp:HyperLink>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+             <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/NewRecipe.aspx">New Recipe</asp:HyperLink>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/AboutUs.aspx">About Us</asp:HyperLink>
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/Contact.aspx">Contact</asp:HyperLink>
+        <br />
+        <br />
+        <br />
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. In viverra tristique lorem. Fusce mollis eros sagittis commodo tincidunt. Pellentesque tincidunt consequat elementum. Morbi pretium nisi quis feugiat porttitor. Aenean eget lectus aliquam, venenatis dui non, elementum ligula. In ac enim sit amet nibh luctus convallis. Cras a sapien neque. Integer mauris tortor, aliquet a tincidunt ut, dignissim ac velit.
 
 Curabitur faucibus malesuada mi eget finibus. Proin hendrerit accumsan ultricies. Donec sit amet est sollicitudin libero consectetur sodales a porttitor odio. Fusce varius augue id convallis semper. Nunc ornare sodales vehicula. Cras massa justo, porta sit amet neque ac, congue venenatis est. Aliquam sit amet ante lectus.
