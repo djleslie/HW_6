@@ -43,7 +43,6 @@
     </div>
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="RecipeID" DataSourceID="SqlDataSource1">
             <Columns>
-                <asp:BoundField DataField="RecipeID" HeaderText="RecipeID" InsertVisible="False" ReadOnly="True" SortExpression="RecipeID" />
                 <asp:BoundField DataField="RecipeName" HeaderText="RecipeName" SortExpression="RecipeName" />
                 <asp:BoundField DataField="SubmittedBy" HeaderText="SubmittedBy" SortExpression="SubmittedBy" />
                 <asp:HyperLinkField DataNavigateUrlFields="RecipeID" DataNavigateUrlFormatString="ViewAllRecipes.aspx?RecipeID={0}" Text="Select" />
