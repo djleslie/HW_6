@@ -1,7 +1,11 @@
-﻿Imports System.Net.Mail
+﻿'Add these two imports so you have access to the mail features.
+Imports System.Net.Mail
 Imports System.Net
-Partial Class Contact
+
+
+Partial Class _default
     Inherits System.Web.UI.Page
+
     Protected Sub sendMail_Click(sender As Object, e As EventArgs) Handles sendMail.Click
         'Declare variables to create a new mail message and client connection.
         Dim msg As New MailMessage
@@ -26,9 +30,9 @@ Partial Class Contact
         msg.IsBodyHtml = True
 
 
-        client.Host = "smtp.dalton.leslie166.com"  'place your smtp server inside quotation marks - gmail is smtp.gmail.com
+        client.Host = "smtp.gmail.com"  'place your smtp server inside quotation marks - gmail is smtp.gmail.com
         client.Port = 587  'place your smtp port here - gmail is 587
-        client.Credentials = New NetworkCredential("dalton.leslie166", "boxturtle11")  'enter you username and password for gmail
+        client.Credentials = New NetworkCredential("ui.6k183", "6k183U*I")  'enter you username and password for gmail
         client.EnableSsl = True  'gmail uses ssl
         client.Send(msg)  'send you msg (variable from above)
 
@@ -41,10 +45,9 @@ Partial Class Contact
         confirmSent.Text = "Thank you.  Your message has been sent."
 
         'After the message has displayed for 2 seconds, "reload" the page.
-        Response.AddHeader("REFRESH", "2;URL=Contact.aspx")
+        Response.AddHeader("REFRESH", "2;URL=default.aspx")
 
 
     End Sub
 
 End Class
-

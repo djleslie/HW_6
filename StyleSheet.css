@@ -1,0 +1,27 @@
+﻿body {text-align:center;background-color:#D2B48C;
+}
+h1 {font-family:Century;text-align:center}
+h2 {font-family:Century;text-align:center
+}
+table{   margin-left:auto; 
+    margin-right:auto;
+    
+}
+
+
+.Gridview1 { width: 100%;   
+    background-color: #F08080;
+;   
+    margin: 5px 0 10px 0;   
+    border: solid 1px #525252;   
+    border-collapse:collapse; }
+
+.Gridview1 th {   
+     padding: 4px 2px;   
+    color: #F08080;   
+    background: #FFFF99 url(grd_head.png) repeat-x top;   
+    border-left: solid 1px #525252;   
+    font-size: 0.9em;   
+}
+
+.Aboutme{margin-right:20%;margin-left:20%}

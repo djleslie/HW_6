@@ -5,14 +5,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>AboutUS </title>
+    <link href="Stylesheet.css" rel="stylesheet" type="text/css" />
 </head>
+
 <body>
     <h1> Wicked Easy Recipes</h1>
     <h2>
     Using 5 Ingredients or Less!</h2>
     <form id="form1" runat="server">
-    <div>
-            <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Home.aspx">Home</asp:HyperLink>
+  <div class="Aboutme">
+            <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Index.aspx">Home</asp:HyperLink>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
              <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/NewRecipe.aspx">New Recipe</asp:HyperLink>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

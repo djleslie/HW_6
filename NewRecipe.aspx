@@ -4,11 +4,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>New</title>
+    <link href="Stylesheet.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
+   
     
      <h1>
         Wicked Easy Recipes
@@ -16,7 +17,10 @@
 <h2>
     Using 5 Ingredients or Less!
 </h2>
-            <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Home.aspx">Home</asp:HyperLink>
+         
+        <br />
+        &nbsp;&nbsp;
+            <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Index.aspx">Home</asp:HyperLink>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
              <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/NewRecipe.aspx">New Recipe</asp:HyperLink>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -24,11 +28,11 @@
              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/Contact.aspx">Contact</asp:HyperLink>
         <br />
-        <br />
-        <br />
-    
+        &nbsp;<br />
+  
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:db_stateFacts %>" DeleteCommand="DELETE FROM [djleslie-HW6_recipes] WHERE [RecipeID] = @RecipeID" InsertCommand="INSERT INTO [djleslie-HW6_recipes] ([RecipeName], [SubmittedBy], [Ingredient1], [Ingredient2], [Ingredient3], [Ingredient4], [Ingredient5], [Preparation], [Notes]) VALUES (@RecipeName, @SubmittedBy, @Ingredient1, @Ingredient2, @Ingredient3, @Ingredient4, @Ingredient5, @Preparation, @Notes)" SelectCommand="SELECT * FROM [djleslie-HW6_recipes]" UpdateCommand="UPDATE [djleslie-HW6_recipes] SET [RecipeName] = @RecipeName, [SubmittedBy] = @SubmittedBy, [Ingredient1] = @Ingredient1, [Ingredient2] = @Ingredient2, [Ingredient3] = @Ingredient3, [Ingredient4] = @Ingredient4, [Ingredient5] = @Ingredient5, [Preparation] = @Preparation, [Notes] = @Notes WHERE [RecipeID] = @RecipeID">
-            <DeleteParameters>
+         
+             <DeleteParameters>
                 <asp:Parameter Name="RecipeID" Type="Int32" />
             </DeleteParameters>
             <InsertParameters>
@@ -56,21 +60,119 @@
             </UpdateParameters>
         </asp:SqlDataSource>
     
-    </div>
-        <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" DataKeyNames="RecipeID" DataSourceID="SqlDataSource1" DefaultMode="Insert" Height="38px" style="margin-right: 0px" Width="233px">
-            <Fields>
-                <asp:BoundField DataField="RecipeName" HeaderText="RecipeName" SortExpression="RecipeName" />
-                <asp:BoundField DataField="SubmittedBy" HeaderText="SubmittedBy" SortExpression="SubmittedBy" />
-                <asp:BoundField DataField="Ingredient1" HeaderText="Ingredient1" SortExpression="Ingredient1" />
-                <asp:BoundField DataField="Ingredient2" HeaderText="Ingredient2" SortExpression="Ingredient2" />
-                <asp:BoundField DataField="Ingredient3" HeaderText="Ingredient3" SortExpression="Ingredient3" />
-                <asp:BoundField DataField="Ingredient4" HeaderText="Ingredient4" SortExpression="Ingredient4" />
-                <asp:BoundField DataField="Ingredient5" HeaderText="Ingredient5" SortExpression="Ingredient5" />
-                <asp:BoundField DataField="Preparation" HeaderText="Preparation" SortExpression="Preparation" />
-                <asp:BoundField DataField="Notes" HeaderText="Notes" SortExpression="Notes" />
-                <asp:CommandField ShowInsertButton="True" />
-            </Fields>
-        </asp:DetailsView>
+        <asp:FormView ID="FormView1" runat="server" DataKeyNames="RecipeID" DataSourceID="SqlDataSource1" DefaultMode="Insert">
+            <EditItemTemplate>
+              
+            </EditItemTemplate>
+            <InsertItemTemplate>  
+              
+           <table>        
+                    <tr>
+                        <td>
+                            RecipeName:
+                        </td>
+                        <td>
+                            <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("RecipeName") %>' />
+                        </td>
+                        <td>
+                            <asp:RequiredFieldValidator ID="Rfv_Name" runat="server" ErrorMessage="Need Name" ControlToValidate="TextBox1"></asp:RequiredFieldValidator>
+                        </td>
+                    </tr>
+                <tr>
+                    <td>
+                        SubmittedBy:
+                    </td>
+                    <td>
+                         <asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("SubmittedBy") %>' />
+                    </td>
+                    <td>
+                        <asp:RequiredFieldValidator ID="Rfv_Submitted" runat="server" ErrorMessage="Who submitted" ControlToValidate="TextBox2"></asp:RequiredFieldValidator>
+                    </td>
+                    
+
+                </tr>
+                <tr>
+                    <td>
+                        Ingredient1:
+
+                    </td>
+                    <td>
+                        <asp:TextBox ID="TextBox3" runat="server" Text='<%# Bind("Ingredient1") %>' />
+                    </td>
+                    <td>
+                        <asp:RequiredFieldValidator ID="Rfv_Ingredient" runat="server" ErrorMessage="Need 1 ingredient" ControlToValidate="TextBox3"></asp:RequiredFieldValidator>
+                    </td>
+                </tr>
+            <tr>
+                <td>
+                    Ingredient2:
+                </td>
+                <td>
+                    <asp:TextBox ID="TextBox4" runat="server" Text='<%# Bind("Ingredient2") %>' />
+                </td>
+            </tr>
+                 <tr>
+                     <td>
+                         Ingredient3:
+                     </td>
+                     <td>
+                          <asp:TextBox ID="TextBox5" runat="server" Text='<%# Bind("Ingredient3") %>' />
+                     </td>
+                    </tr>
+                 <tr>
+                     <td>
+                         Ingredient4:
+                     </td>
+                     <td>
+                          <asp:TextBox ID="TextBox6" runat="server" Text='<%# Bind("Ingredient4") %>' />
+                     </td>
+                 </tr>    
+               <tr>
+                   <td>
+                       Ingredient5:
+                   </td>
+                   <td>
+                         <asp:TextBox ID="Ingredient5TextBox" runat="server" Text='<%# Bind("Ingredient5") %>' />
+                   </td>
+               </tr>
+                <tr>
+                    <td>
+                         Preparation:
+                    </td>
+                    <td>
+                         <asp:TextBox ID="PreparationTextBox" runat="server" Text='<%# Bind("Preparation") %>' />
+                    </td>
+                    <td>
+                        <asp:RequiredFieldValidator ID="Rfv_Prep" runat="server" ErrorMessage="Need to prep" ControlToValidate="PreparationTextBox"></asp:RequiredFieldValidator>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Notes:
+                    </td>
+                    <td>
+                         <asp:TextBox ID="NotesTextBox" runat="server" Text='<%# Bind("Notes") %>' />
+                    </td>
+                    <td>
+
+                    </td>
+                </tr>
+  
+                <tr>
+
+             <td>
+                   
+                  <asp:Button ID="btn_insert" runat="server" CausesValidation="true" CommandName="insert"  Text="Save" ></asp:Button>
+              </td>
+               </tr>
+               
+            </InsertItemTemplate>
+            <ItemTemplate>
+               
+            </ItemTemplate>
+        </asp:FormView>
+
+    </table>
     </form>
 </body>
 </html>
